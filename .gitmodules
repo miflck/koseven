@@ -1,0 +1,15 @@
+[submodule "modules/sigi_backup"]
+	path = modules/sigi_backup
+	url = https://x-token-auth@bitbucket.org/michif/sigi_backup_koseven.git
+[submodule "modules/sigi_core"]
+	path = modules/sigi_core
+	url = https://x-token-auth@bitbucket.org/michif/sigi_core_koseven.git
+[submodule "modules/sigi_lostfound"]
+	path = modules/sigi_lostfound
+	url = https://x-token-auth@bitbucket.org/michif/sigi_lostfound.git
+[submodule "modules/orm_mptt"]
+	path = modules/orm_mptt
+	url = https://x-token-auth@bitbucket.org/michif/orm_mptt.git
+[submodule "modules/kohana-imagefly"]
+	path = modules/kohana-imagefly
+	url = https://miflck@github.com/Bodom78/kohana-imagefly.git

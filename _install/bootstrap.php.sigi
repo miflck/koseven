@@ -86,7 +86,7 @@ Kohana::$environment = Kohana::DEVELOPMENT;
 //Kohana::$environment = Kohana::PRODUCTION;
 
 Kohana::init(array(
-	'base_url'	=> '/sigi_koseven',
+	'base_url'	=> '%%%baseurl%%%',
 	'index_file'=>	FALSE,
 	'profile'    => Kohana::$environment !== Kohana::PRODUCTION,
 	'caching'    => Kohana::$environment === Kohana::PRODUCTION,
@@ -123,7 +123,7 @@ Kohana::modules(array(
 /**
 * Cookie salt for remember user info
 */
-Cookie::$salt = 'heiB8neihuViep3PahcaijaiXaeyai8i';
+Cookie::$salt = '%%%cookiesalt%%%';
 
 /**
  * Execute the main request using PATH_INFO. If no URI source is specified,

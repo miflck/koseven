@@ -13,3 +13,6 @@
 [submodule "modules/kohana-imagefly"]
 	path = modules/kohana-imagefly
 	url = https://miflck@github.com/Bodom78/kohana-imagefly.git
+[submodule "modules/kohana-device"]
+	path = modules/kohana-device
+	url = https://x-token-auth@bitbucket.org/michif/kohana-device.git

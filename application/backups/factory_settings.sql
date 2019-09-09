@@ -55,7 +55,7 @@ CREATE TABLE `contentlinks` (
 CREATE TABLE `contentmodules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(200) DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT '',
   `viewfolder` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=39 ;
@@ -83,7 +83,7 @@ INSERT INTO `contentmodules` VALUES(38, 'User-Info Box', 'Box mit Informationen 
 
 CREATE TABLE `contents` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `shortname` varchar(255) NOT NULL,
+  `shortname` varchar(255) NOT NULL DEFAULT 'Unknown',
   `node_id` int(11) DEFAULT NULL,
   `contentmodule_id` int(11) DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
@@ -103,18 +103,18 @@ CREATE TABLE `contents` (
   `var2` text,
   `var3` text,
   `var4` text,
-  `var5` text NOT NULL,
-  `var6` text NOT NULL,
-  `var7` text NOT NULL,
-  `var8` text NOT NULL,
-  `var9` text NOT NULL,
-  `var10` text NOT NULL,
-  `var11` text NOT NULL,
-  `var12` text NOT NULL,
-  `var13` text NOT NULL,
-  `var14` text NOT NULL,
-  `var15` text NOT NULL,
-  `vars` text NOT NULL,
+  `var5` text,
+  `var6` text,
+  `var7` text,
+  `var8` text,
+  `var9` text,
+  `var10` text,
+  `var11` text,
+  `var12` text,
+  `var13` text,
+  `var14` text,
+  `var15` text,
+  `vars` text,
   `position` int(11) DEFAULT NULL,
   `created_on` varchar(255) DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
@@ -154,7 +154,7 @@ CREATE TABLE `medialinks` (
   `text` text,
   `alttag` varchar(255) NOT NULL,
   `media_parameters` text,
-  `position` int(11) NOT NULL,
+  `position` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`,`content_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -175,13 +175,13 @@ CREATE TABLE `nodemetaobjects` (
   `lang` varchar(200) DEFAULT NULL,
   `menutitle` varchar(200) DEFAULT NULL,
   `windowtitle` varchar(200) DEFAULT NULL,
-  `description` text NOT NULL,
-  `keywords` text NOT NULL,
-  `var1` text NOT NULL,
-  `var2` text NOT NULL,
-  `var3` text NOT NULL,
-  `var4` text NOT NULL,
-  `var5` text NOT NULL,
+  `description` text NOT NULL DEFAULT '',
+  `keywords` text NOT NULL DEFAULT '',
+  `var1` text NOT NULL DEFAULT '',
+  `var2` text NOT NULL DEFAULT '',
+  `var3` text NOT NULL DEFAULT '',
+  `var4` text NOT NULL DEFAULT '',
+  `var5` text NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=264 ;
 
@@ -226,9 +226,9 @@ CREATE TABLE `nodes` (
   `rgt` int(11) NOT NULL,
   `lvl` int(11) NOT NULL,
   `scope` int(11) NOT NULL,
-  `position` int(11) NOT NULL,
+  `position` int(11) NOT NULL DEFAULT '1',
   `nodetemplate_id` int(11) DEFAULT NULL,
-  `shortname` varchar(255) NOT NULL,
+  `shortname` varchar(255) NOT NULL DEFAULT 'Unknown',
   `visible` tinyint(1) NOT NULL DEFAULT '1',
   `type` varchar(255) DEFAULT NULL,
   `displayhook` varchar(255) DEFAULT NULL,
@@ -266,7 +266,7 @@ INSERT INTO `nodes` VALUES(379, 262, 10, 11, 2, 1, 0, 1, 'intern_login', 0, 'pag
 CREATE TABLE `nodetemplates` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(200) DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT '',
   `type` varchar(255) NOT NULL,
   `containers` text NOT NULL,
   `viewfolder` text,
@@ -325,7 +325,7 @@ INSERT INTO `nodetemplates_contentmodules` VALUES(680, 1, 38, 'footer');
 CREATE TABLE `roles` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
-  `description` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uniq_name` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;

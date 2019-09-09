@@ -44,7 +44,7 @@ define('EXT', '.php');
  * When using a legacy application, it is recommended to disable deprecated
  * notices. Disable with: E_ALL & ~E_DEPRECATED
  */
-error_reporting(E_ALL);
+error_reporting(E_ALL & ~E_DEPRECATED);
 
 /**
  * End of standard configuration! Changing any of the code below should only be
@@ -54,7 +54,9 @@ error_reporting(E_ALL);
  */
 
 // Set the full path to the docroot
-define('DOCROOT', realpath(__DIR__.'/../').DIRECTORY_SEPARATOR);
+//define('DOCROOT', realpath(__DIR__.'/../').DIRECTORY_SEPARATOR);
+define('DOCROOT', realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR);
+
 
 // Make the application relative to the docroot, for symlink'd index.php
 if ( ! is_dir($application) AND is_dir(DOCROOT.$application))
@@ -109,6 +111,7 @@ if ( ! defined('KOHANA_START_MEMORY'))
 // Bootstrap the application
 require APPPATH.'bootstrap'.EXT;
 
+/*
 if (PHP_SAPI == 'cli') // Try and load minion
 {
 	class_exists('Minion_Task') OR die('Please enable the Minion module for CLI support.');
@@ -122,8 +125,8 @@ else
 	 * Execute the main request. A source of the URI can be passed, eg: $_SERVER['PATH_INFO'].
 	 * If no source is specified, the URI will be automatically detected.
 	 */
-	echo Request::factory(TRUE, [], FALSE)
+	/*echo Request::factory(TRUE, [], FALSE)
 		->execute()
 		->send_headers(TRUE)
 		->body();
-}
+}*/

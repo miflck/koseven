@@ -123,7 +123,7 @@ Kohana::modules(array(
 /**
 * Cookie salt for remember user info
 */
-Cookie::$salt = 'heiB8neihuViep3PahcaijaiXaeyai8i';
+Cookie::$salt = 'pooNie0Iechohk8si5iekaiwaeGhuem9';
 
 /**
  * Execute the main request using PATH_INFO. If no URI source is specified,
